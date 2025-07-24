@@ -1,0 +1,91 @@
+{
+  "fill" : {
+    "linear-gradient" : [
+      "srgb:0.03576,0.55625,0.93821,1.00000",
+      "srgb:0.46877,0.84720,1.00000,1.00000"
+    ]
+  },
+  "groups" : [
+    {
+      "blur-material" : 0.5,
+      "layers" : [
+        {
+          "fill" : {
+            "solid" : "srgb:0.97413,1.00000,0.99146,1.00000"
+          },
+          "glass" : false,
+          "image-name" : "shopping-basket.png",
+          "name" : "shopping-basket",
+          "position" : {
+            "scale" : 1.6,
+            "translation-in-points" : [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "blend-mode" : "normal",
+          "fill" : {
+            "solid" : "srgb:0.94696,0.96266,1.00000,1.00000"
+          },
+          "glass" : false,
+          "hidden" : true,
+          "image-name" : "trolley.png",
+          "name" : "trolley",
+          "position" : {
+            "scale" : 1.3,
+            "translation-in-points" : [
+              -28.390625,
+              0
+            ]
+          }
+        },
+        {
+          "blend-mode" : "normal",
+          "fill" : "automatic",
+          "glass" : true,
+          "hidden" : true,
+          "image-name" : "grocery-list.png",
+          "name" : "grocery-list",
+          "opacity" : 0.9,
+          "position-specializations" : [
+            {
+              "value" : {
+                "scale" : 1.3,
+                "translation-in-points" : [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "idiom" : "square",
+              "value" : {
+                "scale" : 1.3,
+                "translation-in-points" : [
+                  0,
+                  0
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "shadow" : {
+        "kind" : "layer-color",
+        "opacity" : 0.5
+      },
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.5
+      }
+    }
+  ],
+  "supported-platforms" : {
+    "circles" : [
+      "watchOS"
+    ],
+    "squares" : "shared"
+  }
+}
