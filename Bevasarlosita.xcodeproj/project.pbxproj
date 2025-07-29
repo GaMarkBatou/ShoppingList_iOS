@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		2D7C370E2E32D6940012CA27 /* bevasarlo 2.icon in Resources */ = {isa = PBXBuildFile; fileRef = 2D7C370D2E32D6940012CA27 /* bevasarlo 2.icon */; };
+		2D7C37162E34B2280012CA27 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 2D7C37152E34B2280012CA27 /* Localizable.xcstrings */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		2D3720D42E2533060077A726 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,9 +29,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2D3720C52E2533050077A726 /* Bevasarlosita.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bevasarlosita.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D3720D32E2533060077A726 /* BevasarlositaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BevasarlositaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D3720DD2E2533060077A726 /* BevasarlositaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BevasarlositaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D3720D32E2533060077A726 /* BevasarlositaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = BevasarlositaTests.xctest; path = /Users/markg/Documents/GitHub/ShoppingList_iOS/build/Debug/Bevasarlosita.app/Contents/PlugIns/BevasarlositaTests.xctest; sourceTree = "<absolute>"; };
+		2D3720DD2E2533060077A726 /* BevasarlositaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = BevasarlositaUITests.xctest; path = "/Users/markg/Documents/GitHub/ShoppingList_iOS/build/Debug/BevasarlositaUITests-Runner.app/Contents/PlugIns/BevasarlositaUITests.xctest"; sourceTree = "<absolute>"; };
+		2D7C370D2E32D6940012CA27 /* bevasarlo 2.icon */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "bevasarlo 2.icon"; sourceTree = "<group>"; };
+		2D7C37152E34B2280012CA27 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		2D7C37192E381D7F0012CA27 /* Bevasarlosita.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bevasarlosita.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -75,21 +82,13 @@
 		2D3720BC2E2533050077A726 = {
 			isa = PBXGroup;
 			children = (
+				2D7C37152E34B2280012CA27 /* Localizable.xcstrings */,
 				2D3720C72E2533050077A726 /* Bevasarlosita */,
 				2D3720D62E2533060077A726 /* BevasarlositaTests */,
 				2D3720E02E2533060077A726 /* BevasarlositaUITests */,
-				2D3720C62E2533050077A726 /* Products */,
+				2D7C370D2E32D6940012CA27 /* bevasarlo 2.icon */,
+				2D7C37192E381D7F0012CA27 /* Bevasarlosita.app */,
 			);
-			sourceTree = "<group>";
-		};
-		2D3720C62E2533050077A726 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				2D3720C52E2533050077A726 /* Bevasarlosita.app */,
-				2D3720D32E2533060077A726 /* BevasarlositaTests.xctest */,
-				2D3720DD2E2533060077A726 /* BevasarlositaUITests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -114,7 +113,7 @@
 			packageProductDependencies = (
 			);
 			productName = Bevasarlosita;
-			productReference = 2D3720C52E2533050077A726 /* Bevasarlosita.app */;
+			productReference = 2D7C37192E381D7F0012CA27 /* Bevasarlosita.app */;
 			productType = "com.apple.product-type.application";
 		};
 		2D3720D22E2533060077A726 /* BevasarlositaTests */ = {
@@ -192,11 +191,12 @@
 			knownRegions = (
 				en,
 				Base,
+				hu,
 			);
 			mainGroup = 2D3720BC2E2533050077A726;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 2D3720C62E2533050077A726 /* Products */;
+			productRefGroup = 2D3720BC2E2533050077A726;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -212,6 +212,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D7C370E2E32D6940012CA27 /* bevasarlo 2.icon in Resources */,
+				2D7C37162E34B2280012CA27 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +328,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -380,14 +383,16 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 			};
 			name = Release;
 		};
 		2D3720E82E2533060077A726 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = Bevasarlosita;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = Bevasarlosita/Bevasarlosita.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -425,8 +430,9 @@
 		2D3720E92E2533060077A726 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = Bevasarlosita;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = Bevasarlosita/Bevasarlosita.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
