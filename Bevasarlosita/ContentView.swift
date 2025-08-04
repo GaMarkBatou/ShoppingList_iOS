@@ -70,6 +70,7 @@ enum FejlecSzin: String, CaseIterable, Codable, Identifiable {
 }
 
 struct ContentView: View {
+    @FocusState private var keresosavAktiv: Bool
     @State private var ujTetel = ""
     @State private var showAddField = false
     @State private var ujElemNev = ""
@@ -127,6 +128,15 @@ struct ContentView: View {
             tetelek = betoltott
         }
     }
+
+    func hozzaadas() {
+        let trimmed = ujElemNev.trimmingCharacters(in: .whitespaces)
+        if !trimmed.isEmpty {
+            tetelek.append(Tetel(nev: trimmed, kategoria: selectedKategoria.nev))
+            ujElemNev = ""
+            showAddField = false
+        }
+    }
     
     var body: some View {
         NavigationStack {
@@ -149,7 +159,7 @@ struct ContentView: View {
                             }
                         }
                         .padding(.horizontal)
-                    }.padding(.top, 6)
+                    }.padding(.top, 8)
                     
                     // Eredeti gyors hozzáadás elrejtve, helyette lent lesz
                     /*
@@ -174,6 +184,7 @@ struct ContentView: View {
                     let szurtTetelek = tetelek.filter {
                         $0.kategoria == selectedKategoria.nev && (keresettSzoveg.isEmpty || $0.nev.localizedCaseInsensitiveContains(keresettSzoveg))
                     }
+                    ScrollViewReader { _ in
                     List {
                         ForEach(szurtTetelek) { tetel in
                             HStack {
@@ -247,12 +258,14 @@ struct ContentView: View {
                         }
                     }
                     .searchable(text: $keresettSzoveg, prompt: "search_inner")
+                    .focused($keresosavAktiv)
+                }
                     .padding(.bottom, showAddField ? 60 : 20) // Space for the fixed input bar
                 }
                 // Új elem hozzáadása mező és gomb a képernyő alján
                 VStack {
                     Spacer()
-                    HStack(spacing: 2) {
+                    HStack(spacing: 8) {
                         if showAddField {
                             TextField("new_item_name", text: $ujElemNev)
                                 .textFieldStyle(.roundedBorder)
@@ -261,25 +274,17 @@ struct ContentView: View {
                                     szovegMezoAktiv = true
                                 }
                                 .onSubmit {
-                                    let trimmed = ujElemNev.trimmingCharacters(in: .whitespaces)
-                                    if !trimmed.isEmpty {
-                                        tetelek.append(Tetel(nev: trimmed, kategoria: selectedKategoria.nev))
-                                        ujElemNev = ""
-                                        showAddField = false
-                                    }
+                                    hozzaadas()
                                 }
                             Button(action: {
-                                let trimmed = ujElemNev.trimmingCharacters(in: .whitespaces)
-                                if !trimmed.isEmpty {
-                                    tetelek.append(Tetel(nev: trimmed, kategoria: selectedKategoria.nev))
-                                    ujElemNev = ""
-                                    showAddField = false
-                                }
+                                hozzaadas()
                             }) {
-                                Image(systemName: "plus.circle.fill")
-                                    .font(.title2)
+                                Image(systemName: "plus")
+                                    .padding(8)
+                                    .background(Circle().fill(Color.accentColor.opacity(ujElemNev.trimmingCharacters(in: .whitespaces).isEmpty ? 0.3 : 1)))
+                                    .foregroundColor(.white)
                             }
-                            .buttonStyle(.borderedProminent)
+                            .disabled(ujElemNev.trimmingCharacters(in: .whitespaces).isEmpty)
                         } else {
                             Button("new_item") {
                                 withAnimation {
@@ -303,6 +308,7 @@ struct ContentView: View {
             }
             .onAppear {
                 betoltes()
+                keresosavAktiv = false
             }
             .onChange(of: tetelek) { _, _ in
                 mentes()
